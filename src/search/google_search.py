@@ -83,9 +83,8 @@ def search_google(query):
     
     try:
         client = genai.Client(api_key=gemini_key)
-        # 🚨 모델명을 표준 gemini-1.5-flash로 변경
         response = client.models.generate_content(
-            model='gemini-1.5-flash',
+            model='gemini-2.5-flash',
             contents=prompt
         )
         return response.text
