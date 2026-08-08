@@ -26,7 +26,7 @@ def background_search_task(chat_id, query):
         
     except Exception as e:
         print(f"[에러 발생] {str(e)}")
-        bot.send_message(chat_id, f"데이터 수집 중 서버 오류가 발생했습니다.\n로그를 확인해주세요.")
+        bot.send_message(chat_id, f"🛑 봇 에러 보고서:\n{str(e)}")
 
 # 텔레그램 메시지 수신부
 @bot.message_handler(func=lambda message: True)
@@ -52,5 +52,6 @@ def ping():
     return "서버가 정상적으로 켜져 있습니다!", 200
 
 if __name__ == "__main__":
+    # Render가 지정하는 포트를 우선으로 잡고, 없으면 10000을 씁니다.
     port = int(os.environ.get("PORT", 10000))
     app.run(host="0.0.0.0", port=port)
