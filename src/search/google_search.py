@@ -82,7 +82,10 @@ def search_google(query):
     """
     
     try:
+        # Client 생성 시 API 키 전달
         client = genai.Client(api_key=gemini_key)
+        
+        # 🚨 가장 확실하게 호환되는 표준 모델명 지정
         response = client.models.generate_content(
             model='gemini-2.5-flash',
             contents=prompt
