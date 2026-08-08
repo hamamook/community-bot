@@ -85,9 +85,9 @@ def search_google(query):
         # Client 생성 시 API 키 전달
         client = genai.Client(api_key=gemini_key)
         
-        # 🚨 정확한 최신 표준 모델명 적용 완료!
+        # 🚨 여기서 모델명을 변경합니다!
         response = client.models.generate_content(
-            model='gemini-2.0-flash',
+            model='gemini-3.5-flash-lite',
             contents=prompt
         )
         return response.text
