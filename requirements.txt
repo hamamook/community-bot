@@ -1,0 +1,6 @@
+pyTelegramBotAPI
+google-genai
+playwright
+flask
+requests
+google-search-results
