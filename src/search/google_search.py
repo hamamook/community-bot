@@ -83,11 +83,11 @@ def search_google(query):
     
     try:
         client = genai.Client(api_key=gemini_key)
+        # 🚨 올바른 표준 모델명 지정
         response = client.models.generate_content(
             model='gemini-2.5-flash',
             contents=prompt
         )
         return response.text
     except Exception as e:
-        # 자세한 제미나이 에러 출력
-        return f"❌ 제미나이 요약 과정 에러 상세:\n{str(e)}"
+        return f"❌ 제미나이 요약 실패 상세 사유:\n{str(e)}"
